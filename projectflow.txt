@@ -81,5 +81,23 @@ with Live(save_dvc_exp=True) as live:
     live.log_metric('accuracy', accuracy_score(y_test, y_test))
     live.log_metric('precision', precision_score(y_test, y_test))
     live.log_metric('recall', recall_score(y_test, y_test))
-
     live.log_params(params)
+
+
+Adding a remote S3 storage to DVC
+1. Login to AWS console and create an IAS user
+2. To create IAM just search IAM then select and then on the left section of the screen click user
+3. Click create user(set username and then after clicking next now for personal projects w will need to select Attack policies directly and ignore the other two options then below search AdministratorAccess then click next then keep all as it is and select create user)
+4. Once user is created then click and go inside that user annd then click create access key on the left and after that we will need to select Command line interface and check the box below i agree and then click next and then no need to add tag or do anything else just click create access key
+5. Then copy the access key and secret access key somewhewre or download it for later use
+6. Now to create a S3 bucket goto search again and search S3
+7. Click on create bucket then create a unique bucket name  then dont touch anything and go down and press create bucket and allso copy that unique bucket name as well somewhere.
+8. Now goto project directory and goto terminal there and type pip install dvc[s3]  (The dvc module here allows us tto connect dvc to s3)
+9. Now type pip install awscli
+10. Now on the terminal type "aws configure" and after typing that fil ur access key ID that you copied before and also same for the secret access key as well.
+11. Now it will ask for your region so goto aws console and on your top right corner a country name will be written if we click that then a pop up opens where there are two columns left column only country and right columns the region where those countries are so copy that region.
+12. Now it will ask for your output format just hit enter to select the default value .
+13. Now our user is configured with our project
+14. Now type " dvc remote add -d dvcstore s3://bucketname "  here the bucket name will be the one we copied before.
+15. Now we do dvc commit push the exp outcome that we want to keep.
+16. Finally we do git add commit push. 
