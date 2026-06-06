@@ -98,6 +98,6 @@ Adding a remote S3 storage to DVC
 11. Now it will ask for your region so goto aws console and on your top right corner a country name will be written if we click that then a pop up opens where there are two columns left column only country and right columns the region where those countries are so copy that region.
 12. Now it will ask for your output format just hit enter to select the default value .
 13. Now our user is configured with our project
-14. Now type " dvc remote add -d dvcstore s3://bucketname "  here the bucket name will be the one we copied before.
-15. Now we do dvc commit push the exp outcome that we want to keep.
+14. Now type " dvc remote add -d dvcstore s3://bucketname "  here the bucket name will be the one we copied before. By doing this it sets the dvc store as the default remote.
+15. Now we type " dvc commit " then we type " dvc push " then the exp outcome wiull get pushed to the s3 bucket.
 16. Finally we do git add commit push. 
