@@ -101,3 +101,6 @@ Adding a remote S3 storage to DVC
 14. Now type " dvc remote add -d dvcstore s3://bucketname "  here the bucket name will be the one we copied before. By doing this it sets the dvc store as the default remote.
 15. Now we type " dvc commit " then we type " dvc push " then the exp outcome wiull get pushed to the s3 bucket.
 16. Finally we do git add commit push. 
+17. Now we delete the aws bucket by going to the buckets then select the bucket by marking it on the left then click on the empty button and permanently empty it and it will delete all the files inside the bucket.
+18. After emptying the bucket just mark the bucket again and press thhe delete button beside the empty button to delete the bucket so as to not incur any additional charge.
+19. Finally goto IAM user and delete the user as well by marking it and press delete.
